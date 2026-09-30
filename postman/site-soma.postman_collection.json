@@ -1,0 +1,144 @@
+{
+  "info": {
+    "name": "site-soma - Operacoes POST",
+    "description": "Testes Postman das quatro operacoes matematicas do servidor Express.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Soma",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"a\": 7,\n  \"b\": 5\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/soma",
+          "protocol": "http",
+          "host": [ "localhost" ],
+          "port": "3001",
+          "path": [ "soma" ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status HTTP 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('Resultado da soma', function () { pm.expect(pm.response.text()).to.eql('O resultado da soma de 7 e 5 é 12'); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Subtracao",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"a\": 7,\n  \"b\": 5\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/subtracao",
+          "protocol": "http",
+          "host": [ "localhost" ],
+          "port": "3001",
+          "path": [ "subtracao" ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status HTTP 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('Resultado da subtracao', function () { pm.expect(pm.response.text()).to.eql('O resultado da subtração de 7 e 5 é 2'); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Multiplicacao",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"a\": 7,\n  \"b\": 5\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/multiplicacao",
+          "protocol": "http",
+          "host": [ "localhost" ],
+          "port": "3001",
+          "path": [ "multiplicacao" ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status HTTP 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('Resultado da multiplicacao', function () { pm.expect(pm.response.text()).to.eql('O resultado da multiplicação de 7 e 5 é 35'); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Divisao",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"a\": 7,\n  \"b\": 5\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/divisao",
+          "protocol": "http",
+          "host": [ "localhost" ],
+          "port": "3001",
+          "path": [ "divisao" ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status HTTP 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('Resultado da divisao', function () { pm.expect(pm.response.text()).to.eql('O resultado da divisão de 7 e 5 é 1.4'); });"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3001" }
+  ]
+}
