@@ -1,0 +1,13 @@
+{
+  "name": "site-soma",
+  "version": "1.0.0",
+  "description": "Exercicio de requisicoes POST com Express e operacoes matematicas.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0"
+  }
+}
